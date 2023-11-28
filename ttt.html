@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel = "stylesheet" href = "ttt.css"/>
+    <link rel = "stylesheet" href = "tttstyles.css"/>
+</head>
+<body>
+    <audio autoplay class = "audio">
+        <source src="music/rmorty.mp3">
+    </audio>
+    <div class="titlepage">
+        <p>INTERDIMENSIONAL TIC TAC TOE</p>
+        
+        <div class="bar">
+            <b class="pselect" id = "First"></b>
+            <a id = "vs">VS</a>
+            <b class="pselect" id = "Second"></b>
+        </div>
+
+        <button class="play" onclick ="removetitle()"><strong>PLAY</strong></button>
+    </div>
+    <div class="game">
+        <div class="display">
+            <div class = "cell emptycell" id="cell1"></div>
+            <div class = "cell emptycell" id="cell2"></div>
+            <div class = "cell emptycell" id="cell3"></div>
+            <div class = "cell emptycell" id="cell4"></div>
+            <div class = "cell emptycell" id="cell5"></div>
+            <div class = "cell emptycell" id="cell6"></div>
+            <div class = "cell emptycell" id="cell7"></div>
+            <div class = "cell emptycell" id="cell8"></div>
+            <div class = "cell emptycell" id="cell9"></div>
+        </div>
+        <div class="xo">
+        </div>
+    </div>
+    <script src = "ttt.js"></script>
+</body>
+</html>

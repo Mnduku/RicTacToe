@@ -1,0 +1,85 @@
+
+body{
+    margin: 0px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: blanchedalmond;
+    height: 100%;
+    display: 100%;
+    background-image: url("images/bg2.jpg");
+    background-size:cover
+}
+.titlepage{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-self: center;
+    background-color: blueviolet;
+    bottom: 30%;
+    width: 500px;
+    height: 500px;
+    background: url("images/space.gif");
+    background-position: center;
+    border-radius: 1000px;
+    border: 2px solid black;
+    box-shadow: 0px 1px 5px rgb(0, 0, 0);
+}
+
+
+.game{
+    visibility: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-items:center;
+    align-items: center;
+    background-color: brown;
+    height: 100vh;
+    width: 100vw;
+    flex: 1,1, auto;
+    background-image: url("images/bg2.png");
+    background-size: cover;
+}
+.display{
+    position: absolute;
+    top: 20%;
+    display: grid;
+    row-gap: none;
+    column-gap: 0px;
+    padding: 0px;
+    margin: 0px;
+    grid-template-columns: repeat(3, 125px);
+    grid-template-rows: repeat (3,8px);
+    border-radius: 10px ;
+    box-shadow: 0px 2px 5px 2px rgba(222, 223, 220, 0.807);
+    background-color: black;
+}
+.cell{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: aliceblue;
+    height: 123px;
+    width: 123px;
+    border: 1px solid rgb(0, 0, 0);
+    font-size: 40px;
+    text-align: center;
+    background-color: rgb(11, 11, 11);
+    justify-content: center;
+    
+}
+
+.bar{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-self: center;
+    align-self: center;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    margin-bottom: 8%;
+}

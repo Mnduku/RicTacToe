@@ -1,0 +1,131 @@
+
+@font-face {
+    font-family: rmotty;
+    src: url(fonts/rmorty.ttf);
+}
+
+.titlepage p{
+    font-size: 65px;
+    text-align: center;
+    font-family: rmotty;
+    color: rgb(31, 188, 188);
+    text-shadow: 2px 3px 5px rgb(50, 212, 31);
+    margin-bottom: 75px;
+}
+
+.bye{
+    visibility: hidden;
+}
+.hello{
+    visibility: visible;
+    animation: fadeIn 0.5s;
+}
+
+.play{
+    
+    height: 75px;
+    width: 75px;
+    border-radius: 50px;
+    justify-self: center;
+    align-self: center;
+    background-size: cover;
+    border: none;
+    font-size: 22px;
+    font-family: rmotty;
+    color: rgb(31, 188, 188);
+    text-shadow: 2px 3px 5px rgb(89, 192, 19);
+    background-color: black;
+    box-shadow: 0px 1px 3px 2px rgb(255, 255, 255);
+}
+ .play:hover{
+    background-image: url(images/portal5.gif);
+    transform: scale(130%);
+    transition-duration: 0.5s;
+ }
+
+.pselect{
+    height: 92px;
+    width: 92px;
+    border-radius: 50px;
+    justify-self: center;
+    align-self: center;
+    background-size: cover;
+    border: none;
+    font-size: 22px;
+    font-family: rmotty;
+    
+
+}
+
+.pselect:hover{
+    transform: scale(130%);
+    transition-duration: 0.5s;
+}
+
+.cell:hover{
+    background-color: rgb(56, 56, 54);
+}
+
+#Second{
+    background-image: url("images/pfp1.png");
+}
+
+#First{
+    background-image: url("images/pfp2.png");
+}
+
+#vs{
+  font-size: 60px;
+  font-family: rmotty;
+  color: rgb(31, 188, 188);
+  text-shadow: 2px 3px 5px rgb(50, 212, 31);
+  margin-left: 10%;
+  margin-right: 10%;
+
+}
+
+
+.emptycell{
+    font-size: 40px;
+}
+#cell1{
+    border-radius: 10px 0px 0px 0px;
+}
+#cell3{
+    border-radius: 0px 10px 0px 0px;
+}
+#cell7{
+    border-radius: 0px 0px 0px 10px;
+}
+#cell9{
+    border-radius: 0px 0px 10px 0px;
+}
+
+.ximg{
+    content: url(images/pfp1.png);
+    height: 85px;
+    width: 85px;
+    justify-self: center;
+    align-self: center;
+}
+.oimg{
+    content: url(images/pfp2.png);
+    height: 100px;
+    width: 85px;
+    justify-self: center;
+    align-self: center;
+}
+
+
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+  }
+
+.audio{
+    visibility: hidden;
+  }
