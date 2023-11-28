@@ -129,3 +129,28 @@
 .audio{
     visibility: hidden;
   }
+
+.mortysquare{
+    visibility: visible;
+}
+.ricksquare{
+    visibility: visible;
+}
+
+.disp{
+    text-decoration: none;
+    height: 75px;
+    width: 350px;
+    margin-top: 100px;
+    font-size: 55px;
+    color: rgb(31, 188, 188);
+    text-shadow: 2px 3px 5px rgb(50, 212, 31),
+    2px 5px 8px rgb(34, 35, 34);
+    font-family: rmotty;
+    text-align: center;
+    margin-bottom: 20px;
+}
+#my_youtube{
+    display: none;
+    visibility: none;
+}

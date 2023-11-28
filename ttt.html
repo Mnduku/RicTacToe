@@ -8,21 +8,24 @@
     <link rel = "stylesheet" href = "tttstyles.css"/>
 </head>
 <body>
-    <audio autoplay class = "audio">
+    <iframe id="my_youtube" width="560" height="315" display="none" src="https://www.youtube.com/embed/aV03uhP6WM0"
+     title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+     encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <!--<audio autoplay class = "audio" allow="autoplay" id = "audioo">
         <source src="music/rmorty.mp3">
-    </audio>
+    </audio>-->
     <div class="titlepage">
         <p>INTERDIMENSIONAL TIC TAC TOE</p>
         
         <div class="bar">
-            <b class="pselect" id = "First"></b>
+            <b class="pselect rick" id = "First"></b>
             <a id = "vs">VS</a>
-            <b class="pselect" id = "Second"></b>
+            <b class="pselect morty" id = "Second"></b>
         </div>
-
-        <button class="play" onclick ="removetitle()"><strong>PLAY</strong></button>
+        <button class="play" onclick ="removetitle(); sound1();  sound2()" ><strong>PLAY</strong></button>
     </div>
     <div class="game">
+        <a class="disp">TURN</a>
         <div class="display">
             <div class = "cell emptycell" id="cell1"></div>
             <div class = "cell emptycell" id="cell2"></div>
