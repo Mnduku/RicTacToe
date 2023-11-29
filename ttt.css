@@ -45,7 +45,7 @@ body{
 }
 .display{
     position: absolute;
-    top: 20%;
+    top: 22%;
     display: grid;
     row-gap: none;
     column-gap: 0px;

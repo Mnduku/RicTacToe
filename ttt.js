@@ -85,14 +85,14 @@ const game = {
         addi = document.createElement('img')
         if(this.selectxo == "X")
         {
-            addi.classList.toggle("ximg")
             tile.classList.toggle("mortysquare")
+            tile.classList.toggle("ximg")
             
         } 
         else
         {
-            addi.classList.toggle("oimg")
             tile.classList.toggle("ricksquare")
+            tile.classList.toggle("oimg")
         }
 
         tile.appendChild(addi)
@@ -101,7 +101,7 @@ const game = {
         else this.selectxo = "X"
         console.log(this.selectxo)
         
-        if(this.turncount >=5){
+        if(this.turncount >=4){
             this.checkwin()
         }
 
@@ -130,30 +130,72 @@ const game = {
         }
         else if(clist[0].classList.contains(j) && clist[1].classList.contains(j) && clist[2].classList.contains(j)){
             console.log("winner")
+            this.winner(j)
+            tiles[0].classList.toggle('winsquare')
+            tiles[1].classList.toggle('winsquare')
+            tiles[2].classList.toggle('winsquare')
         }
         else if(clist[3].classList.contains(j) && clist[4].classList.contains(j) && clist[5].classList.contains(j)){
             console.log("winner")
+            this.winner(j)
+            tiles[3].classList.toggle('winsquare')
+            tiles[4].classList.toggle('winsquare')
+            tiles[5].classList.toggle('winsquare')
         } 
         else if(clist[6].classList.contains(j) && clist[7].classList.contains(j) && clist[8].classList.contains(j)){
             console.log("winner")
+            this.winner(j)
+            tiles[6].classList.toggle('winsquare')
+            tiles[7].classList.toggle('winsquare')
+            tiles[8].classList.toggle('winsquare')
         } 
         else if(clist[0].classList.contains(j) && clist[3].classList.contains(j) && clist[6].classList.contains(j)){
             console.log("winner")
+            this.winner(j)
+            tiles[0].classList.toggle('winsquare')
+            tiles[3].classList.toggle('winsquare')
+            tiles[6].classList.toggle('winsquare')
         } 
         else if(clist[1].classList.contains(j) && clist[4].classList.contains(j) && clist[7].classList.contains(j)){
             console.log("winner")
+            this.winner(j)
+            tiles[1].classList.toggle('winsquare')
+            tiles[4].classList.toggle('winsquare')
+            tiles[7].classList.toggle('winsquare')
         } 
         else if(clist[2].classList.contains(j) && clist[5].classList.contains(j) && clist[8].classList.contains(j)){
             console.log("winner")
+            this.winner(j)
+            tiles[2].classList.toggle('winsquare')
+            tiles[5].classList.toggle('winsquare')
+            tiles[8].classList.toggle('winsquare')
         } 
-        else if(clist[0].classList.contains(j) && clist[4].classList.contains(j) && clist[7].classList.contains(j)){
+        else if(clist[0].classList.contains(j) && clist[4].classList.contains(j) && clist[8].classList.contains(j)){
             console.log("winner")
+            this.winner(j)
+            tiles[0].classList.toggle('winsquare')
+            tiles[4].classList.toggle('winsquare')
+            tiles[8].classList.toggle('winsquare')
         } 
         else if(clist[2].classList.contains(j) && clist[4].classList.contains(j) && clist[6].classList.contains(j)){
             console.log("winner")
+            this.winner(j)
+            tiles[2].classList.toggle('winsquare')
+            tiles[4].classList.toggle('winsquare')
+            tiles[6].classList.toggle('winsquare')
         }
         j = "ricksquare"
     }
+    },
+
+    winner: function(w){
+        if(w == "ricksquare"){
+            sound4()
+        }
+        else if(w == "mortysquare"){
+            sound5()
+        }
+
     }
 }
 
@@ -167,10 +209,6 @@ function sound1(){
 
 function sound2(){
     document.getElementById('my_youtube').src = 'https://www.youtube.com/embed/aV03uhP6WM0?autoplay=1'
-  /*  console.log("game music pressed")
-    let snd = new Audio("music/citadel.mp3")
-    snd.play()*/
-
 }
 function sound3(){
     console.log("buttonmusic pressed")
@@ -180,5 +218,22 @@ function sound3(){
 
 }
 function sound4(){
+    let snd = new Audio("music/lick.mp3")
+    snd.play()
+    snd.onended = function(){
+        let wnd = new Audio("music/mfer.mp3")
+        wnd.play()
+    }
+    
+}
+
+function sound5(){
+    let snd = new Audio("music/smart.mp3")
+    snd.play()
+    snd.onended = function(){
+        let wnd = new Audio("music/retard.wav")
+        wnd.play()
+    }
+    
     
 }

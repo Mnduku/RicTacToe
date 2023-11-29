@@ -101,21 +101,6 @@
     border-radius: 0px 0px 10px 0px;
 }
 
-.ximg{
-    content: url(images/pfp1.png);
-    height: 85px;
-    width: 85px;
-    justify-self: center;
-    align-self: center;
-}
-.oimg{
-    content: url(images/pfp2.png);
-    height: 100px;
-    width: 85px;
-    justify-self: center;
-    align-self: center;
-}
-
 
 @-webkit-keyframes fadeIn {
     from {opacity: 0;}
@@ -154,3 +139,41 @@
     display: none;
     visibility: none;
 }
+
+@keyframes changewidth {
+    from {
+      size: 100%;
+    }
+  
+    to {
+      size: 130%;
+    }
+
+}
+
+
+@keyframes animateCloud
+{0% {background-size: 75%;} 50% {background-size: 85%} 100% {background-size: 75%}}
+
+
+.ximg{
+    background-size: 75%;
+    background-image: url(images/pfp1.png);
+    background-repeat: no-repeat;
+    justify-self: center;
+    align-self: center;
+    background-position: 60%;
+}
+.oimg{
+    background-size: 70%;
+    background-image: url(images/pfp2.png);
+    background-repeat:no-repeat;
+    justify-self: center;
+    align-self: center;
+    background-position: 0 0;
+    background-position: 60%;
+}
+.winsquare{
+    animation: animateCloud 1s linear infinite;
+}
+
