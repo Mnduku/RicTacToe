@@ -54,11 +54,13 @@
     border: none;
     font-size: 22px;
     font-family: rmotty;
-    
-
 }
 
 .bar b:hover{
+    transform: scale(130%);
+    transition-duration: 0.5s;
+}
+.replay:hover{
     transform: scale(130%);
     transition-duration: 0.5s;
 }
@@ -139,13 +141,13 @@
     visibility: none;
 }
 
-@keyframes changewidth {
+@keyframes fadein{
     from {
-      size: 100%;
+      opacity: 0%;
     }
   
     to {
-      size: 130%;
+      opacity: 100%;
     }
 
 }
@@ -173,3 +175,32 @@
     animation: animateCloud 1s linear infinite;
 }
 
+.replay{
+    font-family: rmotty;
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    border-radius: 50px;
+    top: 73%;
+    background-size: cover;
+    background-image: url(images/portal5.gif);
+    color: rgb(22, 23, 23);
+    box-shadow: 0px 1px 3px 1px rgb(24, 23, 23),
+    0px -1px 3px 1px rgb(7, 7, 7);
+    text-shadow: 2px 3px 5px rgb(50, 212, 31),
+    2px 5px 8px rgb(34, 35, 34);
+    text-align: center;
+    align-self: center;
+    justify-self: center;
+    align-content: center;
+    justify-content: center;
+    display: none;
+    font-size: 30px;
+
+}
+.endgame{
+    display: flex;
+    animation: fadein 1s linear;
+}
