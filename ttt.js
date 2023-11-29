@@ -1,10 +1,19 @@
+
+function test(tile){
+    return function(){
+    tile.removeEventListener('click', test(tile) ,{once: true} ) 
+    console.log("did we do it")
+    if(game.winnur == true){
+        return
+    }
+    sound3()
+    game.press(tile)
+}
+}
+
 function player(name){
     this.name = name
 
-}
-
-function aiplayer(name){
-    this.name = name
 }
 
 function sound1(){
@@ -23,24 +32,12 @@ function sound3(){
     snd.play()
 }
 
-
-function gboard(){
-    const map = document.querySelectorAll('.cell')
-    const update = {}
-    const checkwin = function(){}
-    let tiles = document.querySelectorAll(".emptycell")
-    tiles.forEach(function(tile){tile.textContent = ""})
-    return{map, update}
-}
-
 function removetitle(){
     tpage = document.querySelector(".titlepage")
     tpage.classList.toggle("bye")
     tpage2 = document.querySelector(".game")
     tpage2.classList.toggle("hello")
     game.start()
-
-
 }
 
 const game = {
@@ -62,20 +59,16 @@ const game = {
     p2: new player,
     p1or2: false,
     winnur: false,
-    choice: "",
     turncount: 0,
-    p1or2: false,
-    selectxo: "O",
+    ranbefore: false,
     playerotation1: 0,
     playerotation2:1,
-    map: gboard(),
 
     start: function(v){
         console.log("booya")
-        this.players()
+        if(this.ranbefore == false)this.players()
         display = document.querySelector(".disp")
         display.textContent = this.p1.name + "'s TURN"
-        map = new gboard()
         game.choose()
     },
 
@@ -93,44 +86,30 @@ const game = {
         let tiles = document.querySelectorAll(".emptycell")
         console.log(tiles)
         tiles.forEach(function(tile){
-            tile.addEventListener('click', function(e){
-                if(game.winnur == true){
-                    return
-                }
-                    sound3()
-                    game.press(tile)
-
-            }, {once: true} ) 
+            console.log("dida we do it")
+            tile.addEventListener('click', test(tile) ,{once: true} ) 
         })
     },
 
     press: function(tile){
         console.log("Press initiated")
-      //  tile.textContent = game.selectxo
-        addi = document.createElement('img')
-        if(this.selectxo == "X")
+        if(this.p1or2 == true)
         {
-            console.log(this.p2.name + "x")
+            console.log(this.p2.name + "has been added")
             tile.classList.toggle(this.p2.name)
             tile.classList.toggle("ximg")
-            
-            
         } 
         else
         {
-            console.log(this.p1.name + "o")
+            console.log(this.p1.name + "has been added")
             tile.classList.toggle(this.p1.name)
-            tile.classList.toggle("oimg")
-            
+            tile.classList.toggle("oimg")     
         }
 
-        tile.appendChild(addi)
         tile.classList.toggle('emptycell')
-        if(this.selectxo == "X"){this.selectxo = "O"}
-        else this.selectxo = "X"
-        console.log(this.selectxo)
         this.turncount = this.turncount + 1
         this.p1or2 = !this.p1or2
+        console.log(this.p1or2 + "TURN CHEKCER")
         display = document.querySelector(".disp")
         if(this.p1or2 == false){
             display.textContent = this.p1.name + "'s TURN"
@@ -140,7 +119,6 @@ const game = {
         }
         if(this.turncount >=4){
             this.checkwin()
-            
         }
     },
 
@@ -225,7 +203,7 @@ const game = {
         console.log(w)
         this.winnur = true
         console.log("BOZO" + game.plist[0].wsound)
-
+        let restart = document.querySelector(".replay")
 
         ione = game.plist2.indexOf(w)
         game.plist[ione].wsound.onended = function(){
@@ -234,18 +212,42 @@ const game = {
             console.log("reached here!")
             itwo = game.plist2.indexOf(game.p2.name)
             game.plist[itwo].Lsound.play()
+            restart.classList.toggle('endgame')
         }
         else{
             console.log("reached here! 2")
             itwo = game.plist2.indexOf(game.p1.name)
             game.plist[itwo].Lsound.play()
+            restart.classList.toggle('endgame')
         }
         }
         game.plist[ione].wsound.play()
 
         display = document.querySelector(".disp")
         display.textContent = w +" WINS"
-    }}
+
+    },
+
+    restart: function(r){
+        console.log("restarting")
+        let tiles = document.querySelectorAll('.cell')
+
+        tiles.forEach(x => {
+            x.className = "cell"
+            x.classList.toggle("emptycell") 
+        });
+
+        game.ranbefore = true
+        game.winnur = false
+        game.p1or2 = false
+        game.turncount = 0
+        let restart = document.querySelector(".replay")
+        restart.classList.toggle('endgame')
+        game.start()
+
+    }
+
+}
 
 document.querySelector("#First").addEventListener('click', function(e){
     let temp = game.playerotation1
