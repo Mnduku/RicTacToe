@@ -18,7 +18,7 @@
 }
 .hello{
     visibility: visible;
-    animation: fadeIn 0.5s;
+    animation: fadeIn  1s;
 }
 
 .play{
@@ -43,13 +43,14 @@
     transition-duration: 0.5s;
  }
 
-.pselect{
+.bar b{
     height: 92px;
     width: 92px;
     border-radius: 50px;
     justify-self: center;
     align-self: center;
     background-size: cover;
+    background-position: 0 0;
     border: none;
     font-size: 22px;
     font-family: rmotty;
@@ -57,21 +58,13 @@
 
 }
 
-.pselect:hover{
+.bar b:hover{
     transform: scale(130%);
     transition-duration: 0.5s;
 }
 
 .cell:hover{
     background-color: rgb(56, 56, 54);
-}
-
-#Second{
-    background-image: url("images/pfp1.png");
-}
-
-#First{
-    background-image: url("images/pfp2.png");
 }
 
 #vs{
@@ -115,17 +108,23 @@
     visibility: hidden;
   }
 
-.mortysquare{
-    visibility: visible;
+.morty{
+    background-image: url("images/pfp1.png");
 }
-.ricksquare{
-    visibility: visible;
+.rick{
+    background-image: url("images/pfp2.png");
+}
+.summer{
+    background-image: url("images/p4.png");
+}
+.jerry{
+    background-image: url("images/p3.png");
 }
 
 .disp{
     text-decoration: none;
     height: 75px;
-    width: 350px;
+    width: 450px;
     margin-top: 100px;
     font-size: 55px;
     color: rgb(31, 188, 188);
@@ -151,14 +150,12 @@
 
 }
 
-
 @keyframes animateCloud
 {0% {background-size: 75%;} 50% {background-size: 85%} 100% {background-size: 75%}}
 
 
 .ximg{
     background-size: 75%;
-    background-image: url(images/pfp1.png);
     background-repeat: no-repeat;
     justify-self: center;
     align-self: center;
@@ -166,7 +163,6 @@
 }
 .oimg{
     background-size: 70%;
-    background-image: url(images/pfp2.png);
     background-repeat:no-repeat;
     justify-self: center;
     align-self: center;
