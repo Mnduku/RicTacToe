@@ -1,7 +1,7 @@
 
 function test(tile){
     return function(){
-    tile.removeEventListener('click', test(tile) ,{once: true} ) 
+    tile.removeEventListener('click', this ,{once: true} ) 
     console.log("did we do it")
     if(game.winnur == true){
         return
@@ -235,6 +235,8 @@ const game = {
         tiles.forEach(x => {
             x.className = "cell"
             x.classList.toggle("emptycell") 
+            xclone = x.cloneNode(true);
+            x.parentNode.replaceChild(xclone, x);
         });
 
         game.ranbefore = true
