@@ -1,5 +1,6 @@
 # RicTacToe
-#A rick and morty themed tic tac toe program
+https://mnduku.github.io/RickTacToe/
+A rick and morty themed tic tac toe program
 - 4 different player options
 - Each have their own win and loss sound affects
 - Press their heads on start menu to rotate through player options
